@@ -6,5 +6,5 @@ import Foundation
 /// More elaborate changes are also required, but try to make sure the `RequestHandler` is generalized enough to work on potential new `APIRoute`s as well.
 protocol RequestHandling {
     
-    func request<T>(route: APIRoute, completion: @escaping (Result<T, Error>) -> Void) where T:Codable
+    func request<T>(route: APIRoute) async throws -> T where T:Codable
 }

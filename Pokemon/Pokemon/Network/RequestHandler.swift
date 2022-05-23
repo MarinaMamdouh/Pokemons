@@ -24,30 +24,32 @@ enum RequestError: Error{
 /// This is to be replaced by a proper implementation that actually makes the network call given the APIRoute, parses the response, and returns the resulting object.
 class RequestHandler: RequestHandling {
  
-    func request<T>(route: APIRoute, completion: @escaping (Result<T, Error>) -> Void)  where T:Codable{
+    func request<T>(route: APIRoute) async throws -> T where T:Codable {
         let request = route.asRequest()
         let session = URLSession.shared
-        let task = session.dataTask(with: request, completionHandler: { data, response, error -> Void in
-            // Request Error
-            if let e = error{
-                completion(.failure(RequestError.NetworkError(description: e.localizedDescription)))
-            }
-            // check if data is not empty
-            if let data = data{
-                // Try Parsing data
-                if let responseResults = self.parse(data: data, to: T.self) {
-                    completion(.success(responseResults))
-                }else{
-                    // Parsing Error
-                    completion(.failure(RequestError.ParsingError))
+        return try await withCheckedThrowingContinuation { continuation in
+            let task = session.dataTask(with: request, completionHandler: { data, response, error -> Void in
+                // Request Error
+                if let e = error{
+                    continuation.resume(with: .failure(RequestError.NetworkError(description: e.localizedDescription)))
                 }
-            }else{
-                // No Data Error
-                completion(.failure(RequestError.NoData))
-            }
-        })
-
-        task.resume()
+                // check if data is not empty
+                if let data = data{
+                    // Try Parsing data
+                    if let responseResults = self.parse(data: data, to: T.self) {
+                        continuation.resume(with: .success(responseResults))
+                    }else{
+                        // Parsing Error
+                        continuation.resume(with: .failure(RequestError.ParsingError))
+                    }
+                }else{
+                    // No Data Error
+                    continuation.resume(with: .failure(RequestError.NoData))
+                }
+            })
+            
+            task.resume()
+        }
     }
     
     private func parse<T>(data:Data , to type: T.Type) ->T? where T:Codable{

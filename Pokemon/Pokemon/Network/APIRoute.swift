@@ -5,32 +5,32 @@ import Foundation
 /// It makes sure you don't have to worry too much about writing down the requests, and instead focus on the request manager.
 /// In the RequestManager, simply use `APIRoute.asRequest()` to get the URLRequest to perform.
 enum APIRoute {
-    case getSpeciesList(limit: Int, offset: Int)
-    case getSpecies(URL)
+    case getPokemonsList(limit: Int, offset: Int)
+    case getPokemonDetails(URL)
     case getEvolutionChain(URL)
-    case getSpeciesImage(Int)
+    case getImage(Int)
 
     private var baseURLString: String { "https://pokeapi.co/api/v2/" }
     private var baseImageURLString: String { "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/" }
 
     private var url: URL? {
         switch self {
-        case .getSpecies(let url),
+        case .getPokemonDetails(let url),
             .getEvolutionChain(let url):
             return url
             
-        case .getSpeciesImage(let id):
+        case .getImage(let id):
             let baseURL = "\(baseImageURLString)" + "\(id).png"
             return URL(string: baseURL)
             
-        case .getSpeciesList:
+        case .getPokemonsList:
             return URL(string: baseURLString + "pokemon-species")
         }
     }
 
     private var parameters: [URLQueryItem] {
         switch self {
-        case .getSpeciesList(let limit, let offset):
+        case .getPokemonsList(let limit, let offset):
             return [
                 URLQueryItem(name: "limit", value: String(limit)),
                 URLQueryItem(name: "offset", value: String(offset))

@@ -8,12 +8,52 @@
 import UIKit
 
 class ListViewController: UITableViewController {
-
+    var pokemons:[PokemonModel] = []
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        fetchPokemons()
+        
+    }
+    
+
+    
+    func fetchPokemons(){
+        let requestHandler = RequestHandler()
+        Task{
+            do{
+                let list:PokemonListModel = try await requestHandler.request(route: APIRoute.getPokemonsList(limit: 0, offset: 20))
+                DispatchQueue.main.async { [weak self] in
+                    self?.pokemons.append(contentsOf: list.results)
+                    self?.tableView.reloadData()
+                }
+            }
+            catch{
+                // show error
+                print(error)
+            }
+        }
+        
     }
 
 
+}
+
+extension ListViewController{
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return pokemons.count
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        
+        return "Pokemons"
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PokemonCell") as! PokemonCellView
+        cell.set(with: pokemons[indexPath.row])
+        return cell
+    }
+    
 }
 
