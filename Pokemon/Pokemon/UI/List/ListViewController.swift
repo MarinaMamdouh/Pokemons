@@ -55,9 +55,8 @@ extension ListViewController{
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyBoard : UIStoryboard = UIStoryboard(name: "Details", bundle:nil)
         let nextViewController = storyBoard.instantiateViewController(withIdentifier: DetailsViewController.identifier) as! DetailsViewController
-        nextViewController.title =  pokemons[indexPath.row].name
-        let cell = tableView.cellForRow(at: indexPath) as! PokemonCellView
-        nextViewController.image = cell.pokemonImage.image
+        let pokemon = pokemons[indexPath.row]
+        nextViewController.pokemon = pokemon
         self.navigationController?.pushViewController(nextViewController, animated: true)
     }
     
