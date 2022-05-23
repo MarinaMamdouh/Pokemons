@@ -9,4 +9,13 @@ import UIKit
 
 class DetailsViewController:UIViewController{
     
+    static let identifier = "Details"
+    
+    @IBOutlet weak var pokemonImage: UIImageView!
+    
+    var image:UIImage?
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        pokemonImage.image = image
+    }
 }

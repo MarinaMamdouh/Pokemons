@@ -34,6 +34,7 @@
 		F80FA29E283C07D80017B005 /* ImageHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageHandler.swift; sourceTree = "<group>"; };
 		F80FA2A0283C081D0017B005 /* Caching.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Caching.swift; sourceTree = "<group>"; };
 		F80FA2A1283C081D0017B005 /* ImageCaching.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCaching.swift; sourceTree = "<group>"; };
+		F80FA2A5283C0EC00017B005 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/List.strings; sourceTree = "<group>"; };
 		F89DE743283BEB9D008C5867 /* Pokemon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pokemon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F89DE746283BEB9D008C5867 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F89DE748283BEB9D008C5867 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -255,6 +256,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				F89DE74D283BEB9D008C5867 /* Base */,
+				F80FA2A5283C0EC00017B005 /* en */,
 			);
 			name = List.storyboard;
 			sourceTree = "<group>";
