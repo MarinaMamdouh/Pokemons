@@ -14,9 +14,7 @@ class ListViewController: UITableViewController {
         fetchPokemons()
         
     }
-    
-
-    
+    // get pokemon from server
     func fetchPokemons(){
         let requestHandler = RequestHandler()
         Task{

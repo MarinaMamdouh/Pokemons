@@ -22,10 +22,12 @@ class PokemonCellView: UITableViewCell{
         }
     }
     
+    // set pokemon property
     func set(with pokemon:PokemonModel){
         self.pokemon = pokemon
     }
     
+    // load image of the current pokemon from server
     private func loadImage(){
         let loader = PokemonsImageLoader()
         Task{

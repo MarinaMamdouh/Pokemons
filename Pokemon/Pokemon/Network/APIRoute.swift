@@ -39,6 +39,13 @@ enum APIRoute {
             return []
         }
     }
+    
+    func asURL() -> URL{
+        guard let url = url else {
+            preconditionFailure("Missing URL for route: \(self)")
+        }
+        return url
+    }
 
     func asRequest() -> URLRequest {
         guard let url = url else {

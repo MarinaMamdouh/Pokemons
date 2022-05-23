@@ -32,7 +32,7 @@ class ImageHandler{
                         
                     }
                     // Cache the image
-                    ImageCaching.reference.save(item: image, withKey: request as AnyObject)
+                    ImageCaching.reference.save(item: image, withKey: route.asURL() as AnyObject)
                     continuation.resume(with: .success(image))
                 }
             })
