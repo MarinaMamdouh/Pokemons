@@ -16,5 +16,12 @@ struct PokemonListModel:Codable{
 
 struct PokemonModel:Codable{
     var name:String
-    var url:String
+    var url:URL
+    func getId()->Int{
+          let urlString = self.url.absoluteString
+          let parts = urlString.split(separator: "/")
+          let idString = parts.last ?? "-1"
+          let id = Int(idString) ?? -1
+          return id
+    }
 }

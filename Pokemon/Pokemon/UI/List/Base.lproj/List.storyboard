@@ -24,27 +24,30 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="90.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no image" translatesAutoresizingMaskIntoConstraints="NO" id="W9b-6c-BpL" userLabel="image">
-                                            <rect key="frame" x="10" y="10" width="70" height="70.5"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" secondItem="W9b-6c-BpL" secondAttribute="height" multiplier="1:1" id="Zwn-cA-fZO"/>
-                                                <constraint firstAttribute="width" constant="70" id="uAe-uW-QVx"/>
-                                            </constraints>
-                                        </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pokemon Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jrL-l2-NRi" userLabel="Name">
-                                            <rect key="frame" x="100" y="35" width="294" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
+                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="uq4-Pj-pjq">
+                                            <rect key="frame" x="10" y="10" width="404" height="70.5"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no image" translatesAutoresizingMaskIntoConstraints="NO" id="W9b-6c-BpL" userLabel="image">
+                                                    <rect key="frame" x="0.0" y="0.0" width="70" height="70.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="W9b-6c-BpL" secondAttribute="height" multiplier="1:1" id="Zwn-cA-fZO"/>
+                                                        <constraint firstAttribute="width" constant="70" id="uAe-uW-QVx"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pokemon Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jrL-l2-NRi" userLabel="Name">
+                                                    <rect key="frame" x="90" y="0.0" width="314" height="70.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="jrL-l2-NRi" firstAttribute="leading" secondItem="W9b-6c-BpL" secondAttribute="trailing" constant="20" id="2kU-8d-wO9"/>
-                                        <constraint firstAttribute="bottom" secondItem="W9b-6c-BpL" secondAttribute="bottom" constant="10" id="9n8-Te-i1G"/>
-                                        <constraint firstItem="W9b-6c-BpL" firstAttribute="leading" secondItem="YoZ-Gi-bh7" secondAttribute="leading" constant="10" id="Oml-QJ-PTj"/>
-                                        <constraint firstItem="jrL-l2-NRi" firstAttribute="centerY" secondItem="W9b-6c-BpL" secondAttribute="centerY" id="SD1-N8-CuV"/>
-                                        <constraint firstItem="W9b-6c-BpL" firstAttribute="top" secondItem="YoZ-Gi-bh7" secondAttribute="top" constant="10" id="YvR-dr-pCp"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="jrL-l2-NRi" secondAttribute="trailing" id="iBX-iK-KnM"/>
+                                        <constraint firstItem="uq4-Pj-pjq" firstAttribute="leading" secondItem="YoZ-Gi-bh7" secondAttribute="leading" constant="10" id="CQr-6D-x7o"/>
+                                        <constraint firstAttribute="trailing" secondItem="uq4-Pj-pjq" secondAttribute="trailing" id="EZ4-4I-OcI"/>
+                                        <constraint firstItem="uq4-Pj-pjq" firstAttribute="top" secondItem="YoZ-Gi-bh7" secondAttribute="top" constant="10" id="MNd-lq-nYi"/>
+                                        <constraint firstAttribute="bottom" secondItem="uq4-Pj-pjq" secondAttribute="bottom" constant="10" id="nMH-C1-sdo"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>

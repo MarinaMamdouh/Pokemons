@@ -44,15 +44,14 @@ extension ListViewController{
         return pokemons.count
     }
     
-    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        
-        return "Pokemons"
-    }
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "PokemonCell") as! PokemonCellView
+        let cell = tableView.dequeueReusableCell(withIdentifier: PokemonCellView.identifier) as! PokemonCellView
         cell.set(with: pokemons[indexPath.row])
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 90
     }
     
 }
