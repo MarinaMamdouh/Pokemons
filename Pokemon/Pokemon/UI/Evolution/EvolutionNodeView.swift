@@ -10,14 +10,15 @@ import UIKit
 class EvolutionNodeView:UIView{
     
     var name:String = "Test"
-    var image:UIImage = UIImage(named: "no image")!
-    
+    var imageId:Int? = 1
+    private var image = UIImage(named: "no image")!
     private var nodeView:UIView!
     private var nodeStackView:UIStackView!
     private var nameLabel:UILabel!
     private var pokemonImage:UIImageView!
     private var arrowImage:UIImageView!
     private var vStackView:UIStackView!
+    public var isLastNode:Bool = false
     
     
     override func draw(_ rect: CGRect) {
@@ -25,6 +26,7 @@ class EvolutionNodeView:UIView{
         drawNode()
         drawArrow()
         addToStackView()
+        
     }
     
     
@@ -56,12 +58,13 @@ class EvolutionNodeView:UIView{
         let heightConstraint = NSLayoutConstraint(item: nodeView!, attribute: NSLayoutConstraint.Attribute.height, relatedBy: NSLayoutConstraint.Relation.equal, toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 1, constant: 140)
         NSLayoutConstraint.activate([ widthConstraint, heightConstraint])
         nodeView.addSubview(nodeStackView)
+        nodeView.backgroundColor = .gray
         nodeStackView.centerXAnchor.constraint(equalTo: nodeView.centerXAnchor).isActive = true
     }
     
     private func drawImage(){
+        loadImage()
         pokemonImage =  UIImageView(image: image)
-        
         pokemonImage.contentMode = .scaleAspectFit
         pokemonImage.clipsToBounds =  true
         pokemonImage.translatesAutoresizingMaskIntoConstraints = false
@@ -96,7 +99,9 @@ class EvolutionNodeView:UIView{
         vStackView.spacing   = 0
 
         vStackView.addArrangedSubview(nodeView)
-        vStackView.addArrangedSubview(arrowImage)
+        if !isLastNode{
+            vStackView.addArrangedSubview(arrowImage)
+        }
         vStackView.translatesAutoresizingMaskIntoConstraints = false
 
         self.addSubview(vStackView)
@@ -104,6 +109,24 @@ class EvolutionNodeView:UIView{
         //Constraints
         vStackView.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
         vStackView.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
-
+        
+    }
+    
+    private func loadImage(){
+        
+        Task{
+            do{
+                let loader = PokemonsImageLoader()
+                if let imageId = imageId {
+                    let retrievedImage = try await loader.loadImage(with: imageId)
+                    DispatchQueue.main.async { [weak self] in
+                        self?.pokemonImage.image = retrievedImage
+                    }
+                }
+            }
+            catch{
+                print(error)
+            }
+        }
     }
 }

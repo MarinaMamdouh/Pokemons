@@ -15,6 +15,7 @@
 		F80FA2A3283C081D0017B005 /* ImageCaching.swift in Sources */ = {isa = PBXBuildFile; fileRef = F80FA2A1283C081D0017B005 /* ImageCaching.swift */; };
 		F80FA2A8283C15770017B005 /* EvolutionNodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F80FA2A7283C15770017B005 /* EvolutionNodeView.swift */; };
 		F80FA2AC283C197D0017B005 /* EvolutionTreeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F80FA2AB283C197D0017B005 /* EvolutionTreeView.swift */; };
+		F84B0487283EB75F0081463E /* PokemonsFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84B0486283EB75F0081463E /* PokemonsFetcher.swift */; };
 		F89DE747283BEB9D008C5867 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89DE746283BEB9D008C5867 /* AppDelegate.swift */; };
 		F89DE749283BEB9D008C5867 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89DE748283BEB9D008C5867 /* SceneDelegate.swift */; };
 		F89DE74B283BEB9D008C5867 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89DE74A283BEB9D008C5867 /* ListViewController.swift */; };
@@ -39,6 +40,7 @@
 		F80FA2A5283C0EC00017B005 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/List.strings; sourceTree = "<group>"; };
 		F80FA2A7283C15770017B005 /* EvolutionNodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvolutionNodeView.swift; sourceTree = "<group>"; };
 		F80FA2AB283C197D0017B005 /* EvolutionTreeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvolutionTreeView.swift; sourceTree = "<group>"; };
+		F84B0486283EB75F0081463E /* PokemonsFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonsFetcher.swift; sourceTree = "<group>"; };
 		F89DE743283BEB9D008C5867 /* Pokemon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pokemon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F89DE746283BEB9D008C5867 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F89DE748283BEB9D008C5867 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 		F89DE75A283BED55008C5867 /* List */ = {
 			isa = PBXGroup;
 			children = (
+				F84B0486283EB75F0081463E /* PokemonsFetcher.swift */,
 				F89DE74A283BEB9D008C5867 /* ListViewController.swift */,
 				F89DE74C283BEB9D008C5867 /* List.storyboard */,
 				F80FA297283C02160017B005 /* PokemonCellView.swift */,
@@ -262,6 +265,7 @@
 				F80FA2A3283C081D0017B005 /* ImageCaching.swift in Sources */,
 				F80FA29F283C07D80017B005 /* ImageHandler.swift in Sources */,
 				F89DE76F283BF28B008C5867 /* PokemonModel.swift in Sources */,
+				F84B0487283EB75F0081463E /* PokemonsFetcher.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
