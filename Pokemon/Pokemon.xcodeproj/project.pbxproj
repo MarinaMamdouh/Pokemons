@@ -13,6 +13,8 @@
 		F80FA29F283C07D80017B005 /* ImageHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F80FA29E283C07D80017B005 /* ImageHandler.swift */; };
 		F80FA2A2283C081D0017B005 /* Caching.swift in Sources */ = {isa = PBXBuildFile; fileRef = F80FA2A0283C081D0017B005 /* Caching.swift */; };
 		F80FA2A3283C081D0017B005 /* ImageCaching.swift in Sources */ = {isa = PBXBuildFile; fileRef = F80FA2A1283C081D0017B005 /* ImageCaching.swift */; };
+		F80FA2A8283C15770017B005 /* EvolutionNodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F80FA2A7283C15770017B005 /* EvolutionNodeView.swift */; };
+		F80FA2AC283C197D0017B005 /* EvolutionTreeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F80FA2AB283C197D0017B005 /* EvolutionTreeView.swift */; };
 		F89DE747283BEB9D008C5867 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89DE746283BEB9D008C5867 /* AppDelegate.swift */; };
 		F89DE749283BEB9D008C5867 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89DE748283BEB9D008C5867 /* SceneDelegate.swift */; };
 		F89DE74B283BEB9D008C5867 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89DE74A283BEB9D008C5867 /* ListViewController.swift */; };
@@ -35,6 +37,8 @@
 		F80FA2A0283C081D0017B005 /* Caching.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Caching.swift; sourceTree = "<group>"; };
 		F80FA2A1283C081D0017B005 /* ImageCaching.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCaching.swift; sourceTree = "<group>"; };
 		F80FA2A5283C0EC00017B005 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/List.strings; sourceTree = "<group>"; };
+		F80FA2A7283C15770017B005 /* EvolutionNodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvolutionNodeView.swift; sourceTree = "<group>"; };
+		F80FA2AB283C197D0017B005 /* EvolutionTreeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvolutionTreeView.swift; sourceTree = "<group>"; };
 		F89DE743283BEB9D008C5867 /* Pokemon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pokemon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F89DE746283BEB9D008C5867 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F89DE748283BEB9D008C5867 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -69,6 +73,15 @@
 				F80FA29B283C07690017B005 /* ImageLoading.swift */,
 			);
 			path = ImageLoader;
+			sourceTree = "<group>";
+		};
+		F80FA2A6283C15350017B005 /* Evolution */ = {
+			isa = PBXGroup;
+			children = (
+				F80FA2A7283C15770017B005 /* EvolutionNodeView.swift */,
+				F80FA2AB283C197D0017B005 /* EvolutionTreeView.swift */,
+			);
+			path = Evolution;
 			sourceTree = "<group>";
 		};
 		F89DE73A283BEB9D008C5867 = {
@@ -154,6 +167,7 @@
 		F89DE763283BEE24008C5867 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				F80FA2A6283C15350017B005 /* Evolution */,
 				F89DE75B283BED7C008C5867 /* Details */,
 				F89DE75A283BED55008C5867 /* List */,
 			);
@@ -234,12 +248,14 @@
 			files = (
 				F80FA298283C02160017B005 /* PokemonCellView.swift in Sources */,
 				F89DE74B283BEB9D008C5867 /* ListViewController.swift in Sources */,
+				F80FA2AC283C197D0017B005 /* EvolutionTreeView.swift in Sources */,
 				F80FA29C283C07690017B005 /* ImageLoader.swift in Sources */,
 				F89DE747283BEB9D008C5867 /* AppDelegate.swift in Sources */,
 				F89DE76C283BF1BE008C5867 /* RequestHandler.swift in Sources */,
 				F80FA29D283C07690017B005 /* ImageLoading.swift in Sources */,
 				F89DE749283BEB9D008C5867 /* SceneDelegate.swift in Sources */,
 				F89DE75D283BED98008C5867 /* DetailsViewController.swift in Sources */,
+				F80FA2A8283C15770017B005 /* EvolutionNodeView.swift in Sources */,
 				F89DE76D283BF1BE008C5867 /* RequestHandling.swift in Sources */,
 				F89DE76B283BF1BE008C5867 /* APIRoute.swift in Sources */,
 				F80FA2A2283C081D0017B005 /* Caching.swift in Sources */,
